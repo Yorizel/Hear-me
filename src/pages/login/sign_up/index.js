@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import {Grid, TextField, Typography, Button, Fade} from "@material-ui/core";
+import {Button, Fade, Grid, TextField, Typography} from "@material-ui/core";
 import logo from '../../../assets/Logo.png'
 import {useForm} from "react-hook-form";
 import {yupResolver} from '@hookform/resolvers/yup';
@@ -10,7 +10,7 @@ import InputMask from 'react-input-mask'
 
 export default function SignUp({reg}) {
     const controller = new UserDAO()
-    const {snack, setSnack} = useContext(SnackContext)
+    const { setSnack} = useContext(SnackContext)
     const [cpf_cnpj, setCpfCnpj] = useState('')
     const {register, handleSubmit, errors,} = useForm({
         resolver: yupResolver(validationSchema)

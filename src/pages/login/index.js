@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import {Grid, Fade} from "@material-ui/core";
+import React, {useState} from 'react'
+import {Fade, Grid} from "@material-ui/core";
 import bg from "../../assets/Registerbg.png";
 import SignIn from './sign_in'
 import {useLocation} from 'react-router-dom'

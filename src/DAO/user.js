@@ -1,6 +1,6 @@
 import {AbstractDAO} from "./abstract";
 
- class UserDAO extends AbstractDAO{
+class UserDAO extends AbstractDAO{
     async create({data}) {
         try {
             const response = await this.api.post(`/user/sign_up`, { ...data});

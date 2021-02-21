@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {Grid, Typography, Collapse, ListItemIcon, ListItemText, List, Divider} from "@material-ui/core";
-import {ExitToApp, ExpandLess, ExpandMore, Inbox, PieChart} from '@material-ui/icons';
+import {Collapse, Divider, Grid, List, ListItemIcon, ListItemText, Typography} from "@material-ui/core";
+import {ExitToApp, ExpandLess, ExpandMore, PieChart} from '@material-ui/icons';
 import ListItem from '@material-ui/core/ListItem';
 import {useHistory} from "react-router-dom";
 

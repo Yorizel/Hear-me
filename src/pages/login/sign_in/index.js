@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {Grid, TextField, Typography, Button, Fade} from "@material-ui/core";
+import {Button, Fade, Grid, TextField, Typography} from "@material-ui/core";
 import logo from '../../../assets/Logo.png'
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
@@ -7,10 +7,11 @@ import {validationSchemaSignIn} from "../validation";
 import {SnackContext} from "../../../context/snackbar";
 import UserDAO from '../../../DAO/user'
 import {useHistory} from "react-router-dom";
+
 export default function SignIn({reg}) {
     const controller = new UserDAO()
     const history = useHistory()
-    const {snack, setSnack} = useContext(SnackContext)
+    const { setSnack} = useContext(SnackContext)
     const { register, handleSubmit, errors,  } = useForm({
         resolver: yupResolver(validationSchemaSignIn)
     });
