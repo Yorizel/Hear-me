@@ -1,12 +1,12 @@
 import React from 'react'
 
 import {Fade, Grid} from "@material-ui/core";
-import Home from './home'
+import Home from '../../components/landing/home'
 
 export default function LandingPage() {
     return (
         <Fade in={true} unmountOnExit>
-            <Grid container style={{
+            <Grid xl={'auto'} xs={'auto'} sm={'auto'} lg={'auto'} md={'auto'} container style={{
                 backgroundColor: ' #F8F9FF'
             }}>
                 <Grid item>

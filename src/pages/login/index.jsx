@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import {Fade, Grid} from "@material-ui/core";
 import bg from "../../assets/Registerbg.png";
-import SignIn from './sign_in'
+import SignIn from '../../components/login/sign_in'
 import {useLocation} from 'react-router-dom'
 import img
     from '../../assets/conceito-de-psicoterapia-online-psicologa-mulher-falando-com-a-paciente_123207-323-removebg-preview_digital_art_x4 1.png'
-import SignUp from "./sign_up";
+import SignUp from "../../components/login/sign_up";
 
 
 export default function LoginForm() {
@@ -16,7 +16,7 @@ export default function LoginForm() {
         <Fade in={true} unmountOnExit>
 
 
-        <Grid
+        <Grid xl={'auto'} xs={'auto'} sm={'auto'} lg={'auto'} md={'auto'}
             style={{
                 backgroundImage: `url(${bg})`,
                 backgroundRepeat: "no-repeat",

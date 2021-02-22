@@ -41,7 +41,7 @@ export default function SignIn({reg}) {
     }
     return (
         <Fade in={true} unmountOnExit>
-            <Grid direction={'column'} justify={'center'} spacing={3} alignContent={'center'} align={'center'} container>
+            <Grid direction={'column'} xl={'auto'} xs={'auto'} sm={'auto'} lg={'auto'} md={'auto'} justify={'center'}  spacing={3} alignContent={'center'} align={'center'} container>
                 <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={3} container item>
                     <Grid item>
                         <img src={logo} alt={'logo'} style={{maxWidth: 65}}/>

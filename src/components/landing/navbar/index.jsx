@@ -12,7 +12,7 @@ export default function NavBar() {
 
         <AppBar position={'static'} color={'transparent'} style={{boxShadow: 'none', marginTop: 10}}>
             <Toolbar>
-                <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={3} container>
+                <Grid direction={'row'}  justify={'center'} alignItems={'center'} spacing={3} container>
                     <Grid item>
                         <img src={logo} alt={'deu ruim'} style={{maxWidth: 60}}/>
                     </Grid>

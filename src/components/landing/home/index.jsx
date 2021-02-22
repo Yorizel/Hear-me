@@ -5,7 +5,7 @@ import bg from '../../../assets/background-top.png'
 
 export default function Home() {
     return (
-        <Grid direction={'column'} container style={{
+        <Grid xl={'auto'} xs={'auto'} sm={'auto'} lg={'auto'} md={'auto'} direction={'column'} container style={{
             backgroundImage: `url(${bg})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: 'cover',
@@ -19,7 +19,7 @@ export default function Home() {
             <Grid style={{paddingBottom: 50}} item>
                 <Navbar/>
             </Grid>
-            <Grid direction={'column'} justify={'center'} alignItems={'flex-start'} alignContent={'center'} spacing={2}
+            <Grid direction={'column'} xl={'auto'} xs={'auto'} sm={'auto'} lg={'auto'} md={'auto'} justify={'center'} alignItems={'flex-start'} alignContent={'center'} spacing={2}
                   container item>
 
                 <Grid style={{maxWidth: '75vw'}} item>

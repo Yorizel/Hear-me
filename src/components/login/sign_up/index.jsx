@@ -8,10 +8,12 @@ import UserDAO from '../../../DAO/user'
 import {SnackContext} from '../../../context/snackbar'
 import InputMask from 'react-input-mask'
 
+
 export default function SignUp({reg}) {
     const controller = new UserDAO()
-    const { setSnack} = useContext(SnackContext)
+    const {setSnack} = useContext(SnackContext)
     const [cpf_cnpj, setCpfCnpj] = useState('')
+
     const {register, handleSubmit, errors,} = useForm({
         resolver: yupResolver(validationSchema)
     });
@@ -19,9 +21,18 @@ export default function SignUp({reg}) {
         try {
 
             const res = await controller.create({data})
-            // eslint-disable-next-line default-case
-            switch (res.status){
-                case 200: setSnack({open: true, message: 'Conta criada com sucesso', color: 'success'})
+            console.log(res)
+            switch (res.error) {
+                case true:{
+                    return  setSnack({open: true, message: 'Email ou CPF já cadastrados', color: 'error'})
+
+                }
+                default : {
+                    setSnack({open: true, message: 'Conta criada com sucesso', color: 'success'})
+                    reg(false)
+                    break
+                }
+
             }
         } finally {
 
@@ -29,7 +40,7 @@ export default function SignUp({reg}) {
     }
     return (
         <Fade in={true} unmountOnExit>
-            <Grid direction={'column'} justify={'center'} spacing={3} alignContent={'center'} align={'center'}
+            <Grid direction={'column'} justify={'center'} xl={'auto'} xs={'auto'} sm={'auto'} lg={'auto'} md={'auto'} spacing={3} alignContent={'center'} align={'center'}
                   container>
                 <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={3} container item>
                     <Grid item>
@@ -46,9 +57,12 @@ export default function SignUp({reg}) {
                     <Grid direction={'column'} justify={'center'} spacing={3} alignContent={'center'} align={'center'}
                           container>
 
+
                         <Grid direction={'row'} justify={'center'} spacing={5} alignContent={'center'} align={'center'}
                               container item>
+
                             <Grid item>
+
                                 <TextField
                                     style={{width: '9vw'}}
                                     label={'Primeiro nome'}
@@ -161,16 +175,20 @@ export default function SignUp({reg}) {
 
                         </Grid>
 
-                        <Grid item>
-                            <Button variant={'contained'} style={{
-                                minWidth: '25%',
-                                maxWidth: '30vw',
-                                background: ' linear-gradient(91.93deg, #C62979 0%, #712867 100%)'
-                            }} type={'submit'}>
+                        <Grid style={{position: 'relative'}} item>
+                            <Button variant={'contained'}
+
+                                    style={{
+                                        minWidth: '25%',
+                                        maxWidth: '30vw',
+                                        background: ' linear-gradient(91.93deg, #C62979 0%, #712867 100%)'
+                                    }} type={'submit'}>
                                 <Typography style={{color: 'white', fontWeight: 600}}>
+
                                     Finalizar Cadastro
                                 </Typography>
                             </Button>
+
                         </Grid>
                     </Grid>
                 </form>

@@ -8,7 +8,7 @@ export const validationSchema = yup.object().shape({
         email: yup.string('Insira seu email').email('Insira um email valido').required('Este campo é obrigatorio'),
 
         user: yup.string('Insira seu nome de usuario').required('Este campo é obrigatorio'),
-
+ 
         cpf_cnpj: yup.string('Insira seu cpf ou cnpj').required('Este campo é obrigatorio').matches(
             /([0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})/,
             'Insira um cpf ou cnpj valido')

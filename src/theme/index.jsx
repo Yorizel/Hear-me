@@ -8,5 +8,5 @@ const tema = createMuiTheme({
     },
 
 });
-const theme = responsiveFontSizes(tema)
-export default theme
+const index = responsiveFontSizes(tema)
+export default index
