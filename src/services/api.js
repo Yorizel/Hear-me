@@ -1,5 +1,13 @@
 import axios from "axios";
 
-export const api = axios.create({
+ const api = axios.create({
     baseURL:"https://hear-me-api.herokuapp.com"
+
 })
+api.interceptors.request.use(async(request) => {
+
+    request.headers.common.authorization = sessionStorage.getItem('token')
+
+    return request
+})
+export default api

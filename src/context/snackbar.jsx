@@ -9,11 +9,12 @@ export default function SnackProvider({children}) {
     const [snack, setSnack] = useState({
         open: false,
         message: '',
-        color: ''
+        color: '',
+
     })
     return (
         <SnackContext.Provider value={{snack, setSnack}}>
-            <Snackbar open={snack.open} autoHideDuration={3000} onClose={() => setSnack({open: false})}>
+            <Snackbar open={snack.open} autoHideDuration={3000} onClose={() => setSnack({open: false})} >
                 <Alert variant="filled" severity={snack.color}>
                     {snack.message}
                 </Alert>
