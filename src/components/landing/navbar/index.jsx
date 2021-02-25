@@ -1,12 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {AppBar, Button, Grid, Toolbar, Typography} from '@material-ui/core'
-import logo from '../../../assets/Logo.png'
+import {Logo} from "../../../assets";
 import {useHistory} from 'react-router-dom'
 
 
-export default function NavBar() {
+export default function NavBar(props) {
+    const homeRef = window.document.getElementById('home')
+    const scrollToHome = () => homeRef.scrollIntoView({behavior: 'smooth'})
+    const aboutRef = window.document.getElementById('about')
+    const scrollToAbout = () => aboutRef.scrollIntoView({behavior: 'smooth', })
+    const pricingRef = window.document.getElementById('pricing')
+    const scrollToPricing = () => pricingRef.scrollIntoView({behavior: 'smooth', })
 
     const history = useHistory()
+    useEffect(() => {console.log(homeRef, aboutRef, pricingRef)},[])
 
     return (
 
@@ -14,7 +21,7 @@ export default function NavBar() {
             <Toolbar>
                 <Grid direction={'row'}  justify={'center'} alignItems={'center'} spacing={3} container>
                     <Grid item>
-                        <img src={logo} alt={'deu ruim'} style={{maxWidth: 60}}/>
+                        <img src={Logo} alt={'deu ruim'} style={{maxWidth: 60}}/>
                     </Grid>
                     <Grid item>
                         <Typography variant={'h5'} style={{color: 'white'}}>
@@ -26,17 +33,17 @@ export default function NavBar() {
                 </Grid>
                 <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={8} container>
                     <Grid item>
-                        <Typography variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                        <Typography onClick={scrollToHome} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
                             Home
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                        <Typography onClick={scrollToAbout}  variant={'h6'} style={{color: '#8794BA', fontWeight: 400, cursor:'pointer'}}>
                             Sobre-nós
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                        <Typography onClick={scrollToPricing}  variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
                             Preços
                         </Typography>
                     </Grid>

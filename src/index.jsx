@@ -5,13 +5,16 @@ import App from './App';
 import theme from './theme';
 import {ThemeProvider} from '@material-ui/core/styles'
 import SnackProvider from './context/snackbar'
+import AuthProvider from "./context/auth";
 
 ReactDOM.render(
     <React.StrictMode>
         <SnackProvider>
-            <ThemeProvider theme={theme}>
-                <App/>
-            </ThemeProvider>
+            <AuthProvider>
+                <ThemeProvider theme={theme}>
+                    <App/>
+                </ThemeProvider>
+            </AuthProvider>
         </SnackProvider>
 
     </React.StrictMode>,

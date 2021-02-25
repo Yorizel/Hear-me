@@ -3,8 +3,10 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import LandingPage from "./pages/landing";
 import LoginForm from "./pages/login";
 import DashboardLanding from "./pages/dashboard";
+import {AuthContext} from "./context/auth";
 
 export default function App() {
+    const {auth} = React.useContext(AuthContext);
 
     return (
         <Router>
@@ -13,12 +15,24 @@ export default function App() {
                     <LandingPage/>
                 </Route>
                 <Route exact path={'/login'}>
-                    <LoginForm />
+                    <LoginForm/>
                 </Route>
+                {
+                    auth.isLogged ?
+                        (
+                            <Route exact path={'/dashboard'}>
+                                <DashboardLanding/>
+                            </Route>
+                        )
+                        :
+                        (
+                            <Route exact path={'/buy'}>
 
-                <Route exact path={'/dashboard'}>
-                   <DashboardLanding/>
-                </Route>
+                            </Route>
+                        )
+                }
+
+
             </Switch>
         </Router>
     )

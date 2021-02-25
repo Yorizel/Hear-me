@@ -7,10 +7,12 @@ import {validationSchemaSignIn} from "../validation";
 import {SnackContext} from "../../../context/snackbar";
 import UserDAO from '../../../DAO/user'
 import {useHistory} from "react-router-dom";
+import {AuthContext} from "../../../context/auth";
 
 export default function SignIn({reg}) {
     const controller = new UserDAO()
     const history = useHistory()
+    const { setAuth } = useContext(AuthContext);
     const { setSnack} = useContext(SnackContext)
     const { register, handleSubmit, errors,  } = useForm({
         resolver: yupResolver(validationSchemaSignIn)
@@ -27,6 +29,7 @@ export default function SignIn({reg}) {
                     setSnack({open: true, message: 'Logado com sucesso', color: 'success'})
                     sessionStorage.setItem('token', token)
                     history.push('/dashboard')
+                    setAuth({token: token, isLogged: true})
                     break
                 }
 

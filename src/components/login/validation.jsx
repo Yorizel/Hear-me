@@ -28,3 +28,13 @@ export const validationSchemaSignIn = yup.object().shape({
     password: yup.string('Insira sua senha').required('Este campo é obrigatorio')
 
 });
+
+export const validationSchemaPatientAdd = yup.object().shape({
+    patient_name: yup.string('Insira o nome do paciente').required('Este campo é obrigatorio'),
+    patient_email: yup.string('Insira o email do paicente').required('Este campo é obrigatorio').email('Insira um email valido'),
+    patient_age: yup.string('Este campo só aceita numeros').required('Este campo é obrigatorio'),
+    patient_cellphone_number: yup.string('Este campo só aceita numeros').required('Este campo é obrigatorio'),
+    patient_address_district: yup.string('Insira o bairro que seu paciente mora').required('Este campo é obrigatorio'),
+    patient_address_street: yup.string('Insira a rua que seu paciente mora').required('Este campo é obrigatorio'),
+    patient_address_number: yup.string('Insira o lote ou numero do endereço do seu paciente').required('Este campo é obrigatorio')
+})

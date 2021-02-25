@@ -1,14 +1,20 @@
 import {Divider, Grid, TextField, Typography, Button} from "@material-ui/core";
 import { useForm} from 'react-hook-form'
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {SnackContext} from "../../../../context/snackbar";
 import PatientsDAO from "../../../../DAO/patients";
+import InputMask from 'react-input-mask'
+import {yupResolver} from "@hookform/resolvers/yup";
+import {validationSchemaPatientAdd} from "../../../login/validation";
 
 export default function PatientsManagement() {
 
-    const {register, handleSubmit, errors} = useForm()
+    const {register, handleSubmit, errors} = useForm({
+        resolver: yupResolver(validationSchemaPatientAdd)
+    })
     const controller = new PatientsDAO()
     const {setSnack} = useContext(SnackContext)
+    const [cellphone_number , setCellphone_number] = useState('')
     const submit = async (data) => {
         try {
             console.log(data)
@@ -38,7 +44,10 @@ export default function PatientsManagement() {
                             id={'patient_name'}
                             style={{width:'100%'}}
                             label={'Nome'}
+                            error={!!errors.patient_name}
+                            helperText={errors.patient_name? errors.patient_name.message: ''}
                             inputRef={register}
+                            placeholder={'João souza de melo'}
                             name={'patient_name'}
                         />
                     </Grid>
@@ -46,8 +55,11 @@ export default function PatientsManagement() {
                         <TextField
                             inputRef={register}
                             style={{width:'100%'}}
+                            error={!!errors.patient_email}
+                            helperText={errors.patient_email? errors.patient_email.message: ''}
                             label={'Email'}
                             name={'patient_email'}
+                            placeholder={'jaosouza@gmail.com'}
                             id={'patient_email'}
                         />
                     </Grid>
@@ -56,19 +68,36 @@ export default function PatientsManagement() {
                             <TextField
                                 id={'patient_age'}
                                 inputRef={register}
+                                error={!!errors.patient_age}
+                                helperText={errors.patient_age? errors.patient_age.message: ''}
                                 style={{width:'5vw'}}
+                                placeholder={'19'}
                                 label={'Idade'}
                                 name={'patient_age'}
+                                type={'number'}
                             />
                         </Grid>
                         <Grid item>
-                            <TextField
-                                inputRef={register}
-                                style={{width:'10vw'}}
-                                label={'Telefone'}
-                                name={'patient_cellphone_number'}
-                                id={'patient_cellphone_number'}
-                            />
+                            <InputMask
+                                mask={'(99) 99999-9999'}
+                                value={ cellphone_number}
+                                onChange={(e) => setCellphone_number(e.target.value)}
+                                maskChar={''}
+                                maskPlaceholder={null}
+                            >
+                                {() => <TextField
+
+                                    inputRef={register}
+                                    style={{width:'10vw'}}
+                                    helperText={errors.patient_cellphone_number? errors.patient_cellphone_number.message: ''}
+                                    error={!!errors.patient_cellphone_number}
+                                    label={'Telefone'}
+                                    name={'patient_cellphone_number'}
+                                    id={'patient_cellphone_number'}
+
+                                />}
+                            </InputMask>
+
                         </Grid>
                     </Grid>
                     <Divider/>
@@ -77,7 +106,10 @@ export default function PatientsManagement() {
                         <TextField
                             inputRef={register}
                             style={{width:'100%'}}
+                            error={!!errors.patient_address_district}
+                            helperText={errors.patient_address_district? errors.patient_address_district.message: ''}
                             label={'Bairro'}
+                            placeholder={'Taguatinga sul'}
                             name={'patient_address_district'}
                             id={'patient_address_district'}
                         />
@@ -87,7 +119,10 @@ export default function PatientsManagement() {
                             <TextField
                                 inputRef={register}
                                 style={{width:'10vw'}}
+                                helperText={errors.patient_address_street? errors.patient_address_street.message: ''}
+                                error={!!errors.patient_address_street}
                                 label={'Rua'}
+                                placeholder={'QSD7, LOTE 18'}
                                 name={'patient_address_street'}
                                 id={'patient_address_street'}
                             />
@@ -96,7 +131,10 @@ export default function PatientsManagement() {
                             <TextField
                                 id={'patient_address_number'}
                                 name={'patient_address_number'}
+                                helperText={errors.patient_address_number? errors.patient_address_number.message: ''}
+                                error={!!errors.patient_address_number}
                                 inputRef={register}
+                                placeholder={'APT 302'}
                                 style={{width:'5vw'}}
                                 label={'Numero'}
                             />
