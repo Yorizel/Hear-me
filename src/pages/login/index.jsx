@@ -3,7 +3,7 @@ import {Fade, Grid} from "@material-ui/core";
 
 import SignIn from '../../components/login/sign_in'
 import {useHistory, useLocation} from 'react-router-dom'
-import {LoginBg, Logo} from "../../assets";
+import {LoginArtwork, LoginBg} from "../../assets";
 import SignUp from "../../components/login/sign_up";
 import {AuthContext} from "../../context/auth";
 import {SnackContext} from "../../context/snackbar";
@@ -25,7 +25,7 @@ export default function LoginForm() {
         <Fade in={true} unmountOnExit>
 
 
-            <Grid xl={'auto'} xs={'auto'} sm={'auto'} lg={'auto'} md={'auto'}
+            <Grid
                   style={{
                       backgroundImage: `url(${LoginBg})`,
                       backgroundRepeat: "no-repeat",
@@ -56,7 +56,7 @@ export default function LoginForm() {
 
                 </Grid>
                 <Grid item>
-                    <img src={Logo} alt="the end" style={{maxWidth: '60vw', maxHeight: '60vh'}}/>
+                    <img src={LoginArtwork} alt="the end" style={{maxWidth: '60vw', maxHeight: '60vh'}}/>
                 </Grid>
 
             </Grid>

@@ -21,7 +21,7 @@ export default function AuthProvider({children}){
     
     useEffect(() => {
         get_user_token()
-    }, [])
+    }, [get_user_token])
     useEffect(() => {
         set_user_token(auth.token)
     },[auth, set_user_token])

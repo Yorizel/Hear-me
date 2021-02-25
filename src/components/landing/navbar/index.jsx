@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {AppBar, Button, Grid, Toolbar, Typography} from '@material-ui/core'
 import {Logo} from "../../../assets";
 import {useHistory} from 'react-router-dom'
@@ -13,7 +13,7 @@ export default function NavBar(props) {
     const scrollToPricing = () => pricingRef.scrollIntoView({behavior: 'smooth', })
 
     const history = useHistory()
-    useEffect(() => {console.log(homeRef, aboutRef, pricingRef)},[])
+
 
     return (
 
