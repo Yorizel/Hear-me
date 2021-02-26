@@ -6,7 +6,7 @@ import UseStyles from './style'
 export default function PricingCard({text}) {
     const classes = UseStyles()
     return (
-        <Card  classes={{root:classes.card}}>
+        <Card  className={classes.card} >
             <Grid justify={'center'} direction={'column'} spacing={8} alignItems={'center'} container>
 
             <Grid item>

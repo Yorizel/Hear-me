@@ -13,18 +13,18 @@ export default function SignUp({reg}) {
     const controller = new UserDAO()
     const {setSnack} = useContext(SnackContext)
     const [cpf_cnpj, setCpfCnpj] = useState('')
-
     const {register, handleSubmit, errors,} = useForm({
         resolver: yupResolver(validationSchema)
     });
+
     const submit = async (data) => {
         try {
 
             const res = await controller.create({data})
             console.log(res)
             switch (res.error) {
-                case true:{
-                    return  setSnack({open: true, message: 'Email ou CPF já cadastrados', color: 'error'})
+                case true: {
+                    return setSnack({open: true, message: 'Email ou CPF já cadastrados', color: 'error'})
 
                 }
                 default : {
@@ -40,9 +40,9 @@ export default function SignUp({reg}) {
     }
     return (
         <Fade in={true} unmountOnExit>
-            <Grid direction={'column'} justify={'center'} xl={'auto'} xs={'auto'} sm={'auto'} lg={'auto'} md={'auto'} spacing={3} alignContent={'center'} align={'center'}
+            <Grid direction={'column'} justify={'center'} spacing={3} alignContent={'center'} align={'center'}
                   container>
-                <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={3} container item>
+                <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={3} container >
                     <Grid item>
                         <img src={logo} alt={'logo'} style={{maxWidth: 65}}/>
                     </Grid>

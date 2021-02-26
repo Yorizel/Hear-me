@@ -11,55 +11,58 @@ export default function Footer() {
     const classes = useStyles()
     return (
 
-        <AppBar position={'static'}  color={'transparent'} className={classes.root}>
+        <AppBar position={'static'} color={'transparent'} className={classes.root}>
             <Toolbar>
-                    <Grid direction={'row'} alignItems={'center'} spacing={3} justify={'center'} container >
-                        <Grid item>
-                            <img src={Logo} alt={'deu ruim'} className={classes.logo}/>
-                        </Grid>
-                        <Grid item>
-                            <Typography variant={'h5'} style={{color: 'white'}}>
-                                Hear-me
-                            </Typography>
-                        </Grid>
-
-
+                <Grid direction={'row'} alignItems={'center'} spacing={3} justify={'center'} container>
+                    <Grid item>
+                        <img src={Logo} alt={'deu ruim'} className={classes.logo}/>
                     </Grid>
-                    <Grid direction={'row'} alignItems={'center'} spacing={5} justify={'center'} container >
-                        <Grid item>
-                            <Typography onClick={() => scrollTo(scroll.home)} variant={'h6'} className={classes.primaryTextButton}>
-                                Home
-                            </Typography>
-                        </Grid>
-                        <Grid item>
-                            <Typography onClick={() => scrollTo(scroll.about)} variant={'h6'} className={classes.primaryTextButton}>
-                                Sobre-nós
-                            </Typography>
-                        </Grid>
-                        <Grid item>
-                            <Typography onClick={() => scrollTo(scroll.pricing)} variant={'h6'} className={classes.primaryTextButton}>
-                                Preços
-                            </Typography>
-                        </Grid>
+                    <Grid item>
+                        <Typography variant={'h5'} style={{color: 'white'}}>
+                            Hear-me
+                        </Typography>
                     </Grid>
 
-                    <Grid direction={'row'} alignItems={'center'} spacing={3} justify={'center'} container>
-                        <Grid item>
-                            <IconButton>
-                                <Twitter className={classes.iconButton}/>
-                            </IconButton>
-                        </Grid>
-                        <Grid item>
-                            <IconButton>
-                                <Instagram className={classes.iconButton}/>
-                            </IconButton>
-                        </Grid>
-                        <Grid item>
-                            <IconButton>
-                                <Facebook className={classes.iconButton}/>
-                            </IconButton>
-                        </Grid>
+
+                </Grid>
+                <Grid direction={'row'} alignItems={'center'} spacing={5} justify={'center'} container>
+                    <Grid item>
+                        <Typography onClick={() => scrollTo(scroll.home)} variant={'h6'}
+                                    className={classes.primaryTextButton}>
+                            Home
+                        </Typography>
                     </Grid>
+                    <Grid item>
+                        <Typography onClick={() => scrollTo(scroll.about)} variant={'h6'}
+                                    className={classes.primaryTextButton}>
+                            Sobre-nós
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography onClick={() => scrollTo(scroll.pricing)} variant={'h6'}
+                                    className={classes.primaryTextButton}>
+                            Preços
+                        </Typography>
+                    </Grid>
+                </Grid>
+
+                <Grid direction={'row'} alignItems={'center'} spacing={3} justify={'center'} container>
+                    <Grid item>
+                        <IconButton>
+                            <Twitter className={classes.iconButton}/>
+                        </IconButton>
+                    </Grid>
+                    <Grid item>
+                        <IconButton>
+                            <Instagram className={classes.iconButton}/>
+                        </IconButton>
+                    </Grid>
+                    <Grid item>
+                        <IconButton>
+                            <Facebook className={classes.iconButton}/>
+                        </IconButton>
+                    </Grid>
+                </Grid>
 
             </Toolbar>
         </AppBar>

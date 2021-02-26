@@ -1,22 +1,22 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {Fade, Grid} from "@material-ui/core";
-
 import SignIn from '../../components/login/sign_in'
 import {useHistory, useLocation} from 'react-router-dom'
-import {LoginArtwork, LoginBg} from "../../assets";
+import {LoginArtwork} from "../../assets";
 import SignUp from "../../components/login/sign_up";
 import {AuthContext} from "../../context/auth";
 import {SnackContext} from "../../context/snackbar";
-
+import useStyles from './style'
 
 export default function LoginForm() {
     const location = useLocation()
+    const classes = useStyles()
     const {auth} = useContext(AuthContext);
     const history = useHistory()
-    const { setSnack} = useContext(SnackContext)
+    const {setSnack} = useContext(SnackContext)
     const [signUp, setSignUp] = useState(location.state.signUp);
     useEffect(() => {
-        if (auth.isLogged){
+        if (auth.isLogged) {
             setSnack({open: true, message: 'Bem vindo de volta', color: 'success'})
             return history.push('/dashboard')
         }
@@ -26,20 +26,11 @@ export default function LoginForm() {
 
 
             <Grid
-                  style={{
-                      backgroundImage: `url(${LoginBg})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: 'cover',
-                      backgroundPosition: "center center",
-                      height: '100%',
-                      width: '100%',
-                      minWidth: '100vw',
-                      minHeight: '100vh'
-                  }}
-                  direction={'row'}
-                  justify={'space-between'}
-                  alignItems={'center'}
-                  container>
+                className={classes.root}
+                direction={'row'}
+                justify={'space-between'}
+                alignItems={'center'}
+                container>
                 <Grid style={{flexGrow: 1}} item>
 
 
@@ -56,7 +47,7 @@ export default function LoginForm() {
 
                 </Grid>
                 <Grid item>
-                    <img src={LoginArtwork} alt="the end" style={{maxWidth: '60vw', maxHeight: '60vh'}}/>
+                    <img src={LoginArtwork} alt="the end" className={classes.artwork}/>
                 </Grid>
 
             </Grid>
