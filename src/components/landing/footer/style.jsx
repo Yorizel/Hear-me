@@ -12,7 +12,11 @@ export default makeStyles(() => ({
     },
     iconButton: {
         color: 'white',
-
+    },
+    primaryTextButton:{
+        color: '#8794BA',
+        fontWeight: 400,
+        cursor: 'pointer'
     }
 
 }))

@@ -1,15 +1,17 @@
 import {Button, Card, CardActionArea, CardActions, CardContent, Grid, Typography} from "@material-ui/core";
 import UseStyles from './style'
 
+
+
 export default function PricingCard({text}) {
     const classes = UseStyles()
     return (
-        <Card className={classes.card}>
+        <Card  classes={{root:classes.card}}>
             <Grid justify={'center'} direction={'column'} spacing={8} alignItems={'center'} container>
 
             <Grid item>
                 <CardContent>
-                    <Grid justify={'center'} direction={'column'} spacing={2} alignItems={'center'} container>
+                    <Grid justify={'center'} direction={'column'}  spacing={2} alignItems={'center'} container>
                         <Grid item>
                             <Typography className={classes.primaryText} variant={'h3'}>
                                 {text ? text.title : 'não encontrado'}

@@ -2,24 +2,21 @@ import React from 'react'
 import {AppBar, Button, Grid, Toolbar, Typography} from '@material-ui/core'
 import {Logo} from "../../../assets";
 import {useHistory} from 'react-router-dom'
+import useStyles from './style'
+import {useScroll} from "../../../hooks/useScroll";
 
+export default function NavBar() {
+    const {scroll, scrollTo} = useScroll()
 
-export default function NavBar(props) {
-    const homeRef = window.document.getElementById('home')
-    const scrollToHome = () => homeRef.scrollIntoView({behavior: 'smooth'})
-    const aboutRef = window.document.getElementById('about')
-    const scrollToAbout = () => aboutRef.scrollIntoView({behavior: 'smooth', })
-    const pricingRef = window.document.getElementById('pricing')
-    const scrollToPricing = () => pricingRef.scrollIntoView({behavior: 'smooth', })
-
+    const classes = useStyles()
     const history = useHistory()
 
 
     return (
 
-        <AppBar position={'static'} color={'transparent'} style={{boxShadow: 'none', marginTop: 10}}>
+        <AppBar position={'static'} color={'transparent'} className={classes.root}>
             <Toolbar>
-                <Grid direction={'row'}  justify={'center'} alignItems={'center'} spacing={3} container>
+                <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={3} container>
                     <Grid item>
                         <img src={Logo} alt={'deu ruim'} style={{maxWidth: 60}}/>
                     </Grid>
@@ -33,17 +30,17 @@ export default function NavBar(props) {
                 </Grid>
                 <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={8} container>
                     <Grid item>
-                        <Typography onClick={scrollToHome} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                        <Typography onClick={() => scrollTo(scroll.home)} variant={'h6'} className={classes.primaryTextButton}>
                             Home
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography onClick={scrollToAbout}  variant={'h6'} style={{color: '#8794BA', fontWeight: 400, cursor:'pointer'}}>
+                        <Typography onClick={() => scrollTo(scroll.about)} variant={'h6'} className={classes.primaryTextButton}>
                             Sobre-nós
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography onClick={scrollToPricing}  variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                        <Typography onClick={() => scrollTo(scroll.pricing)} variant={'h6'} className={classes.primaryTextButton}>
                             Preços
                         </Typography>
                     </Grid>
@@ -56,17 +53,13 @@ export default function NavBar(props) {
                             state: {signUp: false}
                         })}
                                     variant={'h6'}
-                                    style={{color: '#8794BA', cursor: 'pointer', fontWeight: 400}}
+                                    className={classes.primaryTextButton}
                         >
                             Login
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Button style={{
-                            borderRadius: '20px',
-                            textTransform: ' none',
-                            border: '2px solid #465B95'
-                        }} variant={'outlined'}
+                        <Button className={classes.primaryButton} variant={'outlined'}
                                 onClick={() => history.push({
                                     pathname: '/login',
                                     state: {signUp: true}

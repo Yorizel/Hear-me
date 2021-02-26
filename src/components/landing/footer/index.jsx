@@ -1,17 +1,12 @@
+import React from "react";
 import {AppBar, Grid, IconButton, Toolbar, Typography} from "@material-ui/core";
 import {Logo} from "../../../assets";
-import React from "react";
 import useStyles from './style'
-
 import {Facebook, Instagram, Twitter} from "@material-ui/icons";
+import {useScroll} from "../../../hooks/useScroll";
 
 export default function Footer() {
-    const footerHomeRef = window.document.getElementById('home')
-    const footerToHome = () => footerHomeRef.scrollIntoView({behavior: 'smooth'})
-    const footerAbout = window.document.getElementById('about')
-    const footerToAbout = () => footerAbout.scrollIntoView({behavior: 'smooth', })
-    const footerPricingRef = window.document.getElementById('pricing')
-    const footerToPricing = () => footerPricingRef.scrollIntoView({behavior: 'smooth', })
+    const {scroll, scrollTo} = useScroll()
 
     const classes = useStyles()
     return (
@@ -32,17 +27,17 @@ export default function Footer() {
                     </Grid>
                     <Grid direction={'row'} alignItems={'center'} spacing={5} justify={'center'} container >
                         <Grid item>
-                            <Typography onClick={footerToHome} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                            <Typography onClick={() => scrollTo(scroll.home)} variant={'h6'} className={classes.primaryTextButton}>
                                 Home
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Typography onClick={footerToAbout} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                            <Typography onClick={() => scrollTo(scroll.about)} variant={'h6'} className={classes.primaryTextButton}>
                                 Sobre-nós
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Typography onClick={footerToPricing} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                            <Typography onClick={() => scrollTo(scroll.pricing)} variant={'h6'} className={classes.primaryTextButton}>
                                 Preços
                             </Typography>
                         </Grid>
