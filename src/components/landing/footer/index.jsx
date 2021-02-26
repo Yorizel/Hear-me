@@ -6,12 +6,12 @@ import useStyles from './style'
 import {Facebook, Instagram, Twitter} from "@material-ui/icons";
 
 export default function Footer() {
-    const homeRef = window.document.getElementById('home')
-    const scrollToHome = () => homeRef.scrollIntoView({behavior: 'smooth'})
-    const aboutRef = window.document.getElementById('about')
-    const scrollToAbout = () => aboutRef.scrollIntoView({behavior: 'smooth', })
-    const pricingRef = window.document.getElementById('pricing')
-    const scrollToPricing = () => pricingRef.scrollIntoView({behavior: 'smooth', })
+    const footerHomeRef = window.document.getElementById('home')
+    const footerToHome = () => footerHomeRef.scrollIntoView({behavior: 'smooth'})
+    const footerAbout = window.document.getElementById('about')
+    const footerToAbout = () => footerAbout.scrollIntoView({behavior: 'smooth', })
+    const footerPricingRef = window.document.getElementById('pricing')
+    const footerToPricing = () => footerPricingRef.scrollIntoView({behavior: 'smooth', })
 
     const classes = useStyles()
     return (
@@ -32,17 +32,17 @@ export default function Footer() {
                     </Grid>
                     <Grid direction={'row'} alignItems={'center'} spacing={5} justify={'center'} container >
                         <Grid item>
-                            <Typography onClick={scrollToHome} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                            <Typography onClick={footerToHome} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
                                 Home
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Typography onClick={scrollToAbout} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                            <Typography onClick={footerToAbout} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
                                 Sobre-nós
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Typography onClick={scrollToPricing} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                            <Typography onClick={footerToPricing} variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
                                 Preços
                             </Typography>
                         </Grid>
