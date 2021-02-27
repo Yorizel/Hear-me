@@ -1,5 +1,5 @@
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import {Redirect, Route, Switch, useHistory, useLocation} from "react-router-dom";
+import {Redirect, Route, Switch, useLocation} from "react-router-dom";
 import LandingPage from "./pages/landing";
 import LoginForm from "./pages/login";
 import DashboardLanding from "./pages/dashboard";
@@ -9,7 +9,7 @@ import PricingBody from "./components/landing/pricing/pricing_body";
 
 
 export default function Routes() {
-    const history = useHistory()
+
     const {auth} = React.useContext(AuthContext);
     let location = useLocation();
     useEffect(() => {

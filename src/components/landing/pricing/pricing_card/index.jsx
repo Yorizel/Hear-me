@@ -1,6 +1,5 @@
-import {Button, Card, CardActionArea, CardActions, CardContent, Grid, Typography} from "@material-ui/core";
+import {Button, Card, CardActions, CardContent, Grid, Typography} from "@material-ui/core";
 import UseStyles from './style'
-
 
 
 export default function PricingCard({text}) {
