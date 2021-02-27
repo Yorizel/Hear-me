@@ -7,6 +7,7 @@ import {ThemeProvider} from '@material-ui/core/styles'
 import SnackProvider from './context/snackbar'
 import AuthProvider from "./context/auth";
 
+
 ReactDOM.render(
     <React.StrictMode>
         <SnackProvider>

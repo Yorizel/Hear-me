@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Button, Fade, Grid, TextField, Typography} from "@material-ui/core";
-import logo from '../../../assets/Logo.png'
+import logo from '../../../assets/hear-me_logo.png'
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {validationSchemaSignIn} from "../validation";

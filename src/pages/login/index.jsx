@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {Fade, Grid} from "@material-ui/core";
+import {Grid} from "@material-ui/core";
 import SignIn from '../../components/login/sign_in'
 import {useHistory, useLocation} from 'react-router-dom'
 import {LoginArtwork} from "../../assets";
@@ -22,7 +22,7 @@ export default function LoginForm() {
         }
     })
     return (
-        <Fade in={true} unmountOnExit>
+
 
 
             <Grid
@@ -51,7 +51,7 @@ export default function LoginForm() {
                 </Grid>
 
             </Grid>
-        </Fade>
+
     )
 
 }

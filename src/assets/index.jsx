@@ -1,13 +1,14 @@
-import clockIcon from './Iconclock.png'
-import iconPayment from './Iconpayment.png'
-import iconRocket from './Iconrocket.png'
-import schedulerScreen from './screen-02scheduler.png'
-import calendarScreen from './screen-03calendar.png'
-import loginArtwork from './conceito-de-psicoterapia-online-psicologa-mulher-falando-com-a-paciente_123207-323-removebg-preview_digital_art_x4 1.png'
-import pricingBg from './Group_32bg.png'
-import homeBg from './background-top.png'
-import logo from './Logo.png'
-import loginBg from './Registerbg.png'
+import clockIcon from './clock_icon.png'
+import iconPayment from './online_payment_icon.png'
+import iconRocket from './rocket_icon.png'
+import schedulerScreen from './home_page_scheduler_showcase.png'
+import calendarScreen from './home_page_calendar_showcase.png'
+import loginArtwork from './login_page_artwok.png'
+import pricingBg from './pricing_component_background.png'
+import homeBg from './home_component_background.png'
+import logo from './hear-me_logo.png'
+import loginBg from './login_page_background.png'
+
 
 export const RocketIcon = iconRocket
 export const PaymentIcon = iconPayment
