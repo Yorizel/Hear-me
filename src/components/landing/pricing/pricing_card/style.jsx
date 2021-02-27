@@ -34,7 +34,7 @@ export default makeStyles(() =>({
         transition: ['width','.5s','ease-in-out'],
         '&:hover': {
             background: '#EF2A82',
-
+            border: 0,
             transform: 'scale(1.18, 1.18)',
             transitionTimingFunction: 'ease',
             transitionDuration: '0.3s',

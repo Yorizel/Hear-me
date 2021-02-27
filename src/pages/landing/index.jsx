@@ -7,7 +7,10 @@ import PricingBody from "../../components/landing/pricing/pricing_body";
 import useStyles from './style'
 
 export default function LandingPage() {
-const classes = useStyles()
+    const classes = useStyles()
+
+
+
 
     return (
 

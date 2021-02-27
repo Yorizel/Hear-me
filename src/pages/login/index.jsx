@@ -1,5 +1,5 @@
-import React, {useContext, useEffect, useState} from 'react'
-import {Grid} from "@material-ui/core";
+import React, {useContext, useEffect, useRef, useState} from 'react'
+import {Fade, Grid} from "@material-ui/core";
 import SignIn from '../../components/login/sign_in'
 import {useHistory, useLocation} from 'react-router-dom'
 import {LoginArtwork} from "../../assets";
@@ -14,7 +14,8 @@ export default function LoginForm() {
     const {auth} = useContext(AuthContext);
     const history = useHistory()
     const {setSnack} = useContext(SnackContext)
-    const [signUp, setSignUp] = useState(location.state.signUp);
+
+    const [signUp, setSignUp] = useState();
     useEffect(() => {
         if (auth.isLogged) {
             setSnack({open: true, message: 'Bem vindo de volta', color: 'success'})

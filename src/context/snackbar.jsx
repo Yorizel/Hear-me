@@ -14,6 +14,7 @@ export default function SnackProvider({children}) {
 
     })
     return (
+
         <SnackContext.Provider value={{snack, setSnack}}>
             <Snackbar open={snack.open} autoHideDuration={3000} onClose={() => setSnack({open: false})} >
                 <Alert variant="filled" severity={snack.color} >
@@ -22,5 +23,6 @@ export default function SnackProvider({children}) {
             </Snackbar>
             {children}
         </SnackContext.Provider>
+
     )
 }

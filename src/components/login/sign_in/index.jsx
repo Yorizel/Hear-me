@@ -44,7 +44,7 @@ export default function SignIn({reg}) {
     }
     return (
         <Fade in={true} unmountOnExit>
-            <Grid direction={'column'} xl={'auto'} xs={'auto'} sm={'auto'} lg={'auto'} md={'auto'} justify={'center'}  spacing={3} alignContent={'center'} align={'center'} container>
+            <Grid direction={'column'} justify={'center'}  spacing={3} alignContent={'center'} align={'center'} container>
                 <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={3} container item>
                     <Grid item>
                         <img src={logo} alt={'logo'} style={{maxWidth: 65}}/>
@@ -88,14 +88,14 @@ export default function SignIn({reg}) {
                             />
                         </Grid>
                         <Grid  item>
-                            <Button variant={'contained'} type={'submit'} style={{  minWidth: '50%', maxWidth:'30vw' , background: ' linear-gradient(91.93deg, #C62979 0%, #712867 100%)'}}>
+                            <Button variant={'contained'} type={'submit'} style={{  minWidth: '50%', maxWidth:'30%' , background: ' linear-gradient(91.93deg, #C62979 0%, #712867 100%)'}}>
                                 <Typography style={{color: 'white', fontWeight: 600}}>
                                     Entrar
                                 </Typography>
                             </Button>
                         </Grid>
                         <Grid item>
-                            <Button variant={'contained'} style={{minWidth: '50%', maxWidth:'30vw' ,  background: ' linear-gradient(91.93deg, #C62979 0%, #712867 100%)'}}
+                            <Button variant={'contained'} style={{minWidth: '50%', maxWidth:'30%' ,  background: ' linear-gradient(91.93deg, #C62979 0%, #712867 100%)'}}
                                     onClick={() => reg(true)}
                             >
                                 <Typography style={{color: 'white', fontWeight: 600}}>

@@ -35,7 +35,7 @@ export default function PricingCard({text}) {
                 <Grid item>
 
 
-            <CardActionArea>
+
                 <CardActions>
                     <Button className={classes.primaryButton} >
                         <Typography variant={'h5'} className={classes.primaryButtonText}>
@@ -43,7 +43,7 @@ export default function PricingCard({text}) {
                         </Typography>
                     </Button>
                 </CardActions>
-            </CardActionArea>
+
                 </Grid>
             </Grid>
         </Card>

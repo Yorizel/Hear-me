@@ -9,9 +9,9 @@ export default function PricingBody() {
     const classes = useStyles()
 
     const prices = [
-        {id: 1, title: 'Basico', description: 'Ate 20 pacientes', price: 'R$75,00'},
-        {id: 2, title: 'Padrão', description: 'Ate 50 pacientes', price: 'R$150,00'},
-        {id: 3, title: 'Premium', description: 'Ate 100 pacientes', price: 'R$300,00'}
+        {key: 1, title: 'Basico', description: 'Ate 20 pacientes', price: 'R$75,00'},
+        {key: 2, title: 'Padrão', description: 'Ate 50 pacientes', price: 'R$150,00'},
+        {key: 3, title: 'Premium', description: 'Ate 100 pacientes', price: 'R$300,00'}
     ]
 
     return (
@@ -31,7 +31,8 @@ export default function PricingBody() {
                     </Typography>
                 </Grid>
             <Grid  direction={'row'} justify={'center'} alignItems={'center'} spacing={8}  alignContent={'center'} container >
-                { prices.map((item ) => (<Grid  item> <PricingCard text={item} key={item.id}/> </Grid>))}
+                { prices.map((item) => (
+                    <Grid key={item.key}  item> <PricingCard text={item} /> </Grid>))}
 
             </Grid>
 
