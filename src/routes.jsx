@@ -1,10 +1,9 @@
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import {BrowserRouter as Router, Redirect, Route, Switch, useLocation} from "react-router-dom";
+import {Route, Switch, useLocation} from "react-router-dom";
 import LandingPage from "./pages/landing";
 import LoginForm from "./pages/login";
 import DashboardLanding from "./pages/dashboard";
 import React from "react";
-import {AuthContext} from "./context/auth";
 import BuyPage from "./pages/buy";
 
 
