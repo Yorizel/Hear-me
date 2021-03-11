@@ -8,7 +8,7 @@ import pricingBg from './pricing_component_background.png'
 import homeBg from './home_component_background.png'
 import logo from './hear-me_logo.png'
 import loginBg from './login_page_background.png'
-
+import BuyBg from './buy_page__background.png'
 
 export const RocketIcon = iconRocket
 export const PaymentIcon = iconPayment
@@ -20,3 +20,4 @@ export const PricingBg = pricingBg
 export const HomeBg = homeBg
 export const LoginBg = loginBg
 export const Logo = logo
+export const buyBg = BuyBg

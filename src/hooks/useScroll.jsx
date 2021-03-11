@@ -2,9 +2,9 @@ import {useEffect, useState} from "react";
 
 export const useScroll = () => {
     const [scroll, setScroll] = useState({
-        home: null,
-        about: null,
-        pricing: null
+        home: undefined,
+        about: undefined,
+        pricing: undefined
     })
     useEffect(() => {
         const homeRef = window.document.getElementById('home')

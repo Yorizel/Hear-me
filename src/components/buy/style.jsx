@@ -1,14 +1,14 @@
 import {makeStyles} from "@material-ui/core";
-import {PricingBg} from "../../../../assets";
+import {buyBg} from "../../assets/";
 
 export default makeStyles(() => ({
     root:{
 
-        backgroundImage: `url(${PricingBg})`,
+        backgroundImage: `url(${buyBg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: 'cover',
         height: '100%',
-        minHeight: '100vh',
+        minHeight: '110vh',
         minWidth: '100vw',
         backgroundPosition: "center",
     },

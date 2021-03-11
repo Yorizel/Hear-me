@@ -3,18 +3,16 @@ import {Redirect, Route, Switch, useLocation} from "react-router-dom";
 import LandingPage from "./pages/landing";
 import LoginForm from "./pages/login";
 import DashboardLanding from "./pages/dashboard";
-import React, {useEffect} from "react";
+import React from "react";
 import {AuthContext} from "./context/auth";
-import PricingBody from "./components/landing/pricing/pricing_body";
+import BuyPage from "./pages/buy";
 
 
 export default function Routes() {
 
     const {auth} = React.useContext(AuthContext);
     let location = useLocation();
-    useEffect(() => {
-        console.log(location)
-    }, [location])
+
     return (
 
         <TransitionGroup>
@@ -27,7 +25,8 @@ export default function Routes() {
                 <Switch location={location}>
                     <Route exact path={'/'} children={<LandingPage/>}/>
                     <Route exact path={'/login'} children={<LoginForm/>}/>
-                    <Route exact path={'/buy'} children={<PricingBody/>}/>
+
+                    <Route path={'/buy'} children={<BuyPage/>}/>
 
 
                     {
@@ -38,11 +37,8 @@ export default function Routes() {
                             :
 
                             (
-                                <Redirect
-                                    to={{
-                                        pathname: '/',
-                                        state: {permission: true}
-                                    }}/>
+                                <Redirect to={'/'}/>
+
                             )
 
 

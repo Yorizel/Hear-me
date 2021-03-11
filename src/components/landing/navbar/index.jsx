@@ -18,10 +18,10 @@ export default function NavBar() {
             <Toolbar>
                 <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={3} container>
                     <Grid item>
-                        <img src={Logo} alt={'deu ruim'} style={{maxWidth: 60}}/>
+                        <img src={Logo} alt={'deu ruim'} className={classes.logo}/>
                     </Grid>
                     <Grid item>
-                        <Typography variant={'h5'} style={{color: 'white'}}>
+                        <Typography className={classes.logoText}>
                             Hear-me
                         </Typography>
                     </Grid>
@@ -30,17 +30,20 @@ export default function NavBar() {
                 </Grid>
                 <Grid direction={'row'} justify={'center'} alignItems={'center'} spacing={8} container>
                     <Grid item>
-                        <Typography onClick={() => scrollTo(scroll.home)} variant={'h6'} className={classes.primaryTextButton}>
+                        <Typography onClick={() => scrollTo(scroll.home)} variant={'h6'}
+                                    className={classes.primaryTextButton}>
                             Home
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography onClick={() => scrollTo(scroll.about)} variant={'h6'} className={classes.primaryTextButton}>
+                        <Typography onClick={() => scrollTo(scroll.about)} variant={'h6'}
+                                    className={classes.primaryTextButton}>
                             Sobre-nós
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography onClick={() => scrollTo(scroll.pricing)} variant={'h6'} className={classes.primaryTextButton}>
+                        <Typography onClick={() => scrollTo(scroll.pricing)} variant={'h6'}
+                                    className={classes.primaryTextButton}>
                             Preços
                         </Typography>
                     </Grid>
@@ -64,7 +67,7 @@ export default function NavBar() {
                                     pathname: '/login',
                                     state: {signUp: true}
                                 })}>
-                            <Typography variant={'h6'} style={{color: '#8794BA', fontWeight: 400}}>
+                            <Typography className={classes.buttonText}>
                                 Cadastre-se
                             </Typography>
                         </Button>

@@ -3,8 +3,8 @@ import {makeStyles} from "@material-ui/core/styles";
 
 export default makeStyles(() =>({
     card: {
-        minWidth: 300,
-        minHeight: 500,
+        width: '110%',
+        height: '110%',
         backgroundColor: '#0F1F4B',
         borderRadius: 15,
         transition: ['width','.5s','background-color','2s','ease-in-out'],

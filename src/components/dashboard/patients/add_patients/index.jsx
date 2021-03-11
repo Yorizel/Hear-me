@@ -17,9 +17,9 @@ export default function PatientsManagement() {
     const [cellphone_number , setCellphone_number] = useState('')
     const submit = async (data) => {
         try {
-            console.log(data)
+
             const res = await controller.create({data})
-            console.log(res)
+
             switch (res.error) {
                 case true:{
                     return  setSnack({open: true, message: 'Email já cadastrado em outro paciente', color: 'error', })

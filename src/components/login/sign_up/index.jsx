@@ -21,7 +21,7 @@ export default function SignUp({reg}) {
         try {
 
             const res = await controller.create({data})
-            console.log(res)
+
             switch (res.error) {
                 case true: {
                     return setSnack({open: true, message: 'Email ou CPF já cadastrados', color: 'error'})

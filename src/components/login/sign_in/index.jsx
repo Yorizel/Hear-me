@@ -21,7 +21,7 @@ export default function SignIn({reg}) {
         try {
 
             const res = await controller.find({data})
-           console.log(res)
+
 
             switch (res.error){
                 default:{
