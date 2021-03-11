@@ -20,10 +20,10 @@ export default function AuthProvider({children}){
     },[])
     
     useEffect(() => {
-        get_user_token()
+        get_user_token().then()
     }, [get_user_token])
     useEffect(() => {
-        set_user_token(auth.token)
+        set_user_token(auth.token).then()
     },[auth, set_user_token])
     
     return <AuthContext.Provider value={{auth, setAuth}}>{children}</AuthContext.Provider>

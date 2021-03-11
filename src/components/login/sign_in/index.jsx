@@ -28,6 +28,7 @@ export default function SignIn({reg}) {
                     let token = res.data.token
                     setSnack({open: true, message: 'Logado com sucesso', color: 'success'})
                     sessionStorage.setItem('token', token)
+                    console.log(res)
                     history.push('/dashboard')
                     setAuth({token: token, isLogged: true})
                     break
